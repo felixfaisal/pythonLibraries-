@@ -32,7 +32,7 @@ def js_obtainOutput(filepath):
     print(stdout)
 
 
-print(Cpp_obtainOutput('HelloWorld.cpp').decode())
+#print(Cpp_obtainOutput('HelloWorld.cpp').decode())
 
 def check_outputC(filepath,test):
     output = C_obtainOutput(filepath).decode()
@@ -40,5 +40,22 @@ def check_outputC(filepath,test):
         print("Test Completed Succesfully")
     else:
         print("Test Failed")
+        print("Output ",output)
     
-check_outputC('HelloWorld.c','Hello World')
+def check_outputCpp(filepath,test):
+    output = Cpp_obtainOutput(filepath).decode()
+    if output==test:
+        print("Test Completed Succesfully")
+    else:
+        print("Test Failed")
+        print("Output ",output)
+
+def check_outputJs(filepath,test):
+    output = js_obtainOutput(filepath).decode()
+    if output==test:
+        print("Test Completed Succesfully")
+    else:
+        print("Test Failed")
+        print("Output ",output)
+
+
