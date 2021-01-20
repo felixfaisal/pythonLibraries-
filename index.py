@@ -33,3 +33,12 @@ def js_obtainOutput(filepath):
 
 
 print(Cpp_obtainOutput('HelloWorld.cpp').decode())
+
+def check_outputC(filepath,test):
+    output = C_obtainOutput(filepath).decode()
+    if output==test:
+        print("Test Completed Succesfully")
+    else:
+        print("Test Failed")
+    
+check_outputC('HelloWorld.c','Hello World')
